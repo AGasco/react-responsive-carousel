@@ -1,5 +1,5 @@
 # RESPONSIVE CAROUSEL BY ANTONIO F. GASCO
-  This is a test I've built to prove my abilities in front-end development
+  This is a small project I've built to test my abilities in front-end development
   
   If you want to see a live demo of the project, please visit -> https://responsive-carousel.web.app/
   
