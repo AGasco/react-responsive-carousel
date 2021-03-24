@@ -1,5 +1,7 @@
 import React from "react";
 import CustomComponent from "./components/CustomComponent.jsx";
+import Pic from "./slideContent/pic.jpg";
+import Video from "./slideContent/video.mp4";
 
 const people = [
   { id: "p00", name: "Kristīne", age: "41", address: "Riga - Latvia" },
@@ -12,13 +14,7 @@ const people = [
 export default [
   {
     index: 0,
-    slide: (
-      <img
-        id={"slide0"}
-        className="slide__img"
-        src={"./../public/slideContent/pic.jpg"}
-      />
-    ),
+    slide: <img id={"slide0"} className="slide__img" src={Pic} />,
   },
   {
     index: 1,
@@ -43,7 +39,7 @@ export default [
         muted
         loop
         autoPlay
-        src={"./../public/slideContent/video.mp4"}
+        src={Video}
       />
     ),
   },
