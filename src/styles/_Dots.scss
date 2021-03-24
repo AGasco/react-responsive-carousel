@@ -1,0 +1,19 @@
+.dots {
+  display: flex;
+
+  .dot {
+    margin: 2px;
+    color: #333;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: $base-color;
+    &.active {
+      opacity: 1;
+      background: white;
+    }
+  }
+}

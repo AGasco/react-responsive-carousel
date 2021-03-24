@@ -1,0 +1,53 @@
+.slide {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    text-align: center;
+    height: max-content !important;
+  }
+
+  & > * {
+    height: 90%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  // Apply global styles to each slide type here
+  &__div,
+  &__table,
+  &__customComponent {
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    padding: 10%;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  &__table {
+    margin-bottom: 10vh;
+
+    caption {
+      color: white;
+      font-size: 3rem;
+    }
+    thead {
+      font-weight: bold;
+    }
+  }
+
+  &__customComponent {
+    font-family: "Wire One", cursive;
+    font-size: 120%;
+    background-color: none;
+  }
+
+  // Apply individual styles to each slide here
+  & #slide1 > * {
+    color: red;
+  }
+}

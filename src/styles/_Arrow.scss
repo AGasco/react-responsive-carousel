@@ -1,0 +1,59 @@
+$base-color: #ccc;
+$hover-color: #fff;
+
+.arrow {
+  position: absolute;
+  width: 2vw;
+  height: 1vh;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  //Common properties for all children
+  & > * {
+    position: absolute;
+    height: 10px;
+    width: 30px;
+    background-color: $base-color;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+
+  //Specific properties for each child
+  &.left {
+    left: 0;
+    top: 40vh;
+  }
+
+  &.right {
+    top: 40vh;
+    right: 0;
+  }
+
+  &__top-left {
+    transform: rotate(-30deg);
+  }
+
+  &__bot-left {
+    transform: rotate(30deg) translate(5px, 10px);
+  }
+
+  &__top-right {
+    transform: rotate(30deg);
+  }
+
+  &__bot-right {
+    transform: rotate(-30deg) translate(-5px, 10px);
+  }
+
+  //When hovering, change color
+  &:hover &__top-left,
+  &:hover &__bot-left,
+  &:hover &__top-right,
+  &:hover &__bot-right {
+    background-color: $hover-color;
+  }
+}
