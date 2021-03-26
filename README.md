@@ -8,7 +8,7 @@
   
   ```bash
   git clone https://github.com/AGasco/responsive-carousel/
-  cd .\responsive-carousel\
+  cd .\react-responsive-carousel\
   npm i 
   ```
   
