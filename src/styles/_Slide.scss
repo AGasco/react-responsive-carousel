@@ -43,11 +43,5 @@
   &__customComponent {
     font-family: "Wire One", cursive;
     font-size: 120%;
-    background-color: none;
-  }
-
-  // Apply individual styles to each slide here
-  & #slide1 > * {
-    color: red;
   }
 }
