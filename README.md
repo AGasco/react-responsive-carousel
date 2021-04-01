@@ -28,31 +28,6 @@ Data is defined in <code>src/data.js</code>, and it has the following structure:
   slide: html-element
 }
 ```
-Inside the slide, you can add any html element. For example, to add an element of type `<img>`, do: 
-```
-{
-  index: 10,  // Unique identifier
-  slide: (  
-    <img
-      id={"slide10"}
-      className="slide__img" // Always use this structure -> "slide__{type}"
-      src={"path"}
-    />)
-}
-```
-The <code>id</code> attribute in the slide element is used to target that specific slide, for styling purposes
-
-## How to target an specific slide
-If any slide's style needs to be modified, it can be targeted inside <em>_Slide.scss</em> using the <code>id</code> html attribute. For example, if we would like to target the slide above, we would do so
-
-```
-.slide{
-  ...
-  & #slide10{
-    // css goes here
-  }
-}
-```
   
 ## Features
   <ul>
