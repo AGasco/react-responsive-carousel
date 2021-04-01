@@ -1,22 +1,12 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Arrow from "../common/Arrow.jsx";
 import Dots from "../common/Dots.jsx";
-import Slide from "./Slide.jsx";
 
-const Carousel = ({ slides }) => {
+const Carousel = ({ children: slides, id, slideWidth, slideRef }) => {
   const [curSlide, setCurSlide] = useState(0);
-  const [slideWidth, setSlideWidth] = useState(0);
   const [lastTouchPos, setLastTouchPos] = useState(0);
   const [lastMousePos, setLastMousePos] = useState(0);
   const [move, setMove] = useState(0);
-
-  //Setting a ref to grab the slides' width so translateX moves the correct distance no matter the size
-  const slideRef = useRef(null);
-  useLayoutEffect(() => {
-    if (slideRef.current) {
-      setSlideWidth(slideRef.current.getBoundingClientRect().width);
-    }
-  }, [slideRef.current]);
 
   useEffect(() => {
     moveTo(curSlide);
@@ -71,10 +61,10 @@ const Carousel = ({ slides }) => {
 
   //Movement handlers
   const handleSwipe = (distance) => {
-    const maxDistance = slides.length - 1;
+    const maxDistance = (slides.length - 1) * slideWidth;
     let newMove = move + distance;
     if (newMove < 0) newMove = 0;
-    if (newMove > maxDistance * slideWidth) newMove = maxDistance * slideWidth;
+    if (newMove > maxDistance) newMove = maxDistance;
     setMove(newMove);
   };
 
@@ -98,6 +88,7 @@ const Carousel = ({ slides }) => {
   return (
     <div
       className="carousel"
+      id={id}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -112,11 +103,7 @@ const Carousel = ({ slides }) => {
           className="carousel__slidesContainer"
           style={{ transform: `translateX(${move * -1}px)` }}
         >
-          {slides.map((s) => (
-            <Slide slideWidth={slideWidth - 1} key={s.index}>
-              {s.slide}
-            </Slide>
-          ))}
+          {slides}
         </div>
       </div>
       <Arrow direction="right" onClick={nextSlide} />
