@@ -7,7 +7,7 @@
   Type these commands below into the terminal in order to clone this repository to your local machine and then install the packages through npm 
   
   ```bash
-  git clone https://github.com/AGasco/responsive-carousel/
+  git clone https://github.com/AGasco/react-responsive-carousel/
   cd .\react-responsive-carousel\
   npm i 
   ```
