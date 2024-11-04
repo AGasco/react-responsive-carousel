@@ -28,6 +28,10 @@
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   }
 
+  &__div {
+    padding: 5% 10%;
+  }
+
   &__table {
     margin-bottom: 10vh;
 
@@ -41,7 +45,28 @@
   }
 
   &__customComponent {
-    font-family: "Wire One", cursive;
+    font-family: 'Wire One', cursive;
     font-size: 120%;
+
+    .buttonsContainer {
+      display: flex;
+      justify-content: center;
+
+      button {
+        cursor: pointer;
+        padding: 0 10px;
+        background-color: white;
+        border: none;
+        font-size: 1.5rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+    }
   }
 }
